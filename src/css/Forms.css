@@ -1,0 +1,19 @@
+.div-putInfo {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 6vh;
+  width: 100vw;
+}
+
+.div-putInfo div {
+  margin: 8vh 1vw 0;
+  width: fit-content;
+}
+
+.label-coin {
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+}

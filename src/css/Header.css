@@ -1,0 +1,88 @@
+.div-header {
+  background-color: rgba(73, 72, 72, 0.527);
+  color: white;
+  display: flex;
+  height: 15vh;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  justify-content: start;
+  margin-left: -4vw;
+  width: 60%;
+}
+
+.logo img {
+  margin-left: 1vw;
+  width: 5.5%;
+}
+
+.logo h1 {
+  font-family: Impact, Haettenschweiler, sans-serif;
+  font-size: 6vh;
+  font-weight: 700;
+  margin-top: 1.5vh;
+}
+
+.section-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Impact, Haettenschweiler, sans-serif;
+  justify-content: center;
+  padding: 2vh 3vw;
+  width: 20%;
+}
+
+.email {
+  font-weight: 600;
+  margin: 5%;
+}
+
+.info {
+  display: flex;
+  width: 70%;
+}
+
+.info span, p {
+  margin-left: 2%;
+}
+
+@media screen and ( max-width : 1024px ) {
+
+  .div-header {
+    align-items: center;
+  }
+
+  .div-logo {
+    margin-left: 0;
+    width: 50%;
+  }
+
+  .div-logo img {
+    margin-left: 2vw;
+    width: 10%;
+  }
+
+  h1 {
+    font-size: 4vh;
+  }
+
+  .section-info {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: Impact, Haettenschweiler, sans-serif;
+    font-size: 90%;
+    justify-content: center;
+    padding: 0.3vh 3vw;
+  }
+
+  .email {
+    margin: 5vh 0 0.1%;
+  }
+
+}
