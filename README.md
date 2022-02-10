@@ -1,4 +1,4 @@
-# Bem vindo ao MyWallet   <img src='' alt="carteira"/>
+# Bem vindo ao MyWallet   <img width='30px' src='https://cdn.discordapp.com/attachments/935207613543624835/941473251606028368/wallet.png' alt="carteira"/>
 
 <img src="https://cdn.discordapp.com/attachments/935207613543624835/941470242922704897/Captura_de_tela_de_2022-02-10_17-15-08.png"/>
 
