@@ -5,8 +5,9 @@
   height: 100vh;
   justify-content: center;
   width: 100vw;
-  background-color: rgb(52,58,64);
-  color: white;
+  background-image: url('../images/pexels-john-guccione-wwwadvergroupcom-3531895.jpg');
+  background-size: cover;
+  color: black;
 }
 
 .div-logo {
