@@ -5,6 +5,9 @@ export const CHANGE_WALLET = 'CHANGE_WALLET';
 export const REQUEST_API = 'REQUEST_API';
 export const REQUEST_FAIL = 'REQUEST_FAIL';
 export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const GET_EDIT_EXPENSE = 'GET_EDIT_EXPENSE';
+export const GET_CURRENCIES = 'GET_CURRENCIES';
 
 export const getLogin = (email) => ({
   type: LOGIN_USER,
@@ -26,6 +29,11 @@ export const requestApiFail = (error) => ({
   error,
 });
 
+export const getCurrencies = (currencies) => ({
+  type: GET_CURRENCIES,
+  currencies,
+});
+
 export const fetchCurriencies = (expense) => (dispatch) => {
   dispatch(requestApi());
   return fetchCoinsAPI().then(
@@ -36,5 +44,15 @@ export const fetchCurriencies = (expense) => (dispatch) => {
 
 export const deleteExp = (expense) => ({
   type: DELETE_EXPENSE,
+  expense,
+});
+
+export const editExpense = (expense) => ({
+  type: EDIT_EXPENSE,
+  expense,
+});
+
+export const getEditedExpense = (expense) => ({
+  type: GET_EDIT_EXPENSE,
   expense,
 });

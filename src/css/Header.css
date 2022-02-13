@@ -19,7 +19,7 @@
 .logo {
   align-items: center;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   /* margin-left: -1vw; */
   width: 60%;
 }

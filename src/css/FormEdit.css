@@ -1,0 +1,56 @@
+.div-Info {
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 6vh;
+  width: 100vw;
+}
+
+.div-Info div {
+  margin: 8vh 1vw 0;
+  width: fit-content;
+}
+
+.label-coin {
+  display: flex;
+  justify-content: center;
+  margin-top: 7%;
+}
+
+@media screen  and (max-width : 672px) {
+
+  .div-Info {
+    flex-direction: column;
+    margin: 0 auto 3vh;
+    width: 65%;
+    align-items: center;
+  }
+
+  .div-Info button {
+    width: 30vw;
+  }
+}
+
+@media screen  and (max-width : 476px) {
+
+  .div-Info {
+    align-items: flex-start;
+  }  
+
+  .div-Info input, select {
+    width: 31vw;
+  }
+
+  .div-Info button {
+    width: 70vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 752px) and (max-width: 1268px) {
+
+  .div-Info div {
+    margin: 8vh 2.5vw 0;
+  }
+
+}

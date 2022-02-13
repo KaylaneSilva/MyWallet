@@ -7,7 +7,7 @@ import '../css/Header.css';
 
 class Header extends React.Component {
   render() {
-    const { email, expenses } = this.props;
+    const { expenses } = this.props;
     const totalValue = expenses
       ? expenses.reduce((acc, expense) => {
         const cotacao = expense.exchangeRates[expense.currency].ask;

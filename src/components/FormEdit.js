@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetchCoinsAPI from '../services';
-import { fetchCurriencies, getCurrencies } from '../actions';
-import '../css/Forms.css';
+import { getEditedExpense, getCurrencies } from '../actions';
+import '../css/FormEdit.css';
 
 class Forms extends React.Component {
   constructor() {
@@ -14,25 +14,43 @@ class Forms extends React.Component {
       currency: 'USD',
       method: '',
       tag: '',
+      exchangeRates: '',
+      moedas: [],
       id: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleInitialState = this.handleInitialState.bind(this);
+    this.handleStateWithInfo = this.handleStateWithInfo.bind(this);
   }
 
   async componentDidMount() {
+    this.handleStateWithInfo();
     const { getCurrencie } = this.props;
     const coins = await fetchCoinsAPI();
     getCurrencie(Object.keys(coins));
   }
 
+  async handleStateWithInfo() {
+    const { editInfo } = this.props;
+    const coins = await fetchCoinsAPI();
+    this.setState({
+      value: editInfo !== undefined ? Number(editInfo.value) : '',
+      description: editInfo !== undefined ? editInfo.description : '',
+      currency: editInfo !== undefined ? editInfo.currency : '',
+      method: editInfo !== undefined ? editInfo.method : '',
+      tag: editInfo !== undefined ? editInfo.tag : '',
+      exchangeRates: editInfo !== undefined ? editInfo.exchangeRates : '',
+      moedas: editInfo !== undefined ? Object.values(coins) : '',
+      id: editInfo !== undefined ? editInfo.id : '',
+    });
+  }
+
   handleInitialState() {
-    this.setState((state) => ({
-      id: state.id + 1,
+    this.setState({
       value: '',
       description: '',
       method: '',
-    }));
+    });
   }
 
   handleChange({ target }) {
@@ -43,7 +61,7 @@ class Forms extends React.Component {
   }
 
   render() {
-    const { getInfo, currencies } = this.props;
+    const { editedExpense } = this.props;
     const {
       id,
       value,
@@ -51,22 +69,24 @@ class Forms extends React.Component {
       tag,
       currency,
       method,
+      exchangeRates,
+      moedas,
     } = this.state;
     return (
-      <div className="div-putInfo">
-        <div className="input-group mb-3">
-          <span html="description" className="input-group-text">
-            Descrição
-          </span>
-          <input
-            name="description"
-            id="description"
-            type="text"
-            value={description}
-            onChange={this.handleChange}
-            data-testid="description-input"
-          />
-        </div>
+      <div className="div-Info">
+      <div className="input-group mb-3">
+        <span html="description" className="input-group-text">
+          Descrição
+        </span>
+        <input
+          name="description"
+          id="description"
+          type="text"
+          value={ description }
+          onChange={ this.handleChange }
+          data-testid="description-input"
+        />
+      </div>
         <div className="input-group input-group-sm mb-3">
           <span html="valor" className="input-group-text">
             Valor
@@ -76,8 +96,8 @@ class Forms extends React.Component {
             id="valor"
             type="number"
             data-testid="value-input"
-            value={value}
-            onChange={this.handleChange}
+            value={ value }
+            onChange={ this.handleChange }
           />
         </div>
         <div className="input-group mb-3">
@@ -87,9 +107,9 @@ class Forms extends React.Component {
           <select
             className="form-select"
             name="method"
-            value={method}
+            value={ method }
             id="method"
-            onChange={this.handleChange}
+            onChange={ this.handleChange }
             data-testid="method-input"
           >
             <option> </option>
@@ -105,9 +125,9 @@ class Forms extends React.Component {
           <select
             className="form-select"
             name="tag"
-            value={tag}
+            value={ tag }
             id="tag"
-            onChange={this.handleChange}
+            onChange={ this.handleChange }
             data-testid="tag-input"
           >
             <option> </option>
@@ -127,21 +147,21 @@ class Forms extends React.Component {
               className="form-select"
               name="currency"
               id="currency"
-              value={currency}
-              onChange={this.handleChange}
+              value={ currency }
+              onChange={ this.handleChange }
               data-testid="currency-input"
             >
-              {currencies ? currencies.map((coin, index) => {
-                if (coin === 'USDT' || coin === 'BRLT') {
+              { moedas ? moedas.map((coin, index) => {
+                if (coin.code === 'USDT' || coin.codein === 'BRLT') {
                   return '';
                 }
                 return (
                   <option
-                    key={index}
-                    value={coin}
-                    data-testid={coin}
+                    key={ index }
+                    value={ coin.code }
+                    data-testid={ coin.code }
                   >
-                    {coin}
+                    { coin.code }
                   </option>);
               }) : ''}
             </select>
@@ -150,19 +170,20 @@ class Forms extends React.Component {
         <button
           className="btn btn-primary btn-sm"
           type="button"
-          onClick={() => {
-            getInfo({
+          onClick={ () => {
+            editedExpense({
               id,
               value,
               description,
               currency,
               method,
               tag,
+              exchangeRates,
             });
             this.handleInitialState();
-          }}
+          } }
         >
-          Adicionar despesa
+          Editar despesa
         </button>
       </div>
     );
@@ -170,17 +191,25 @@ class Forms extends React.Component {
 }
 
 Forms.propTypes = {
-  getInfo: PropTypes.func.isRequired,
+  editedExpense: PropTypes.func.isRequired,
   getCurrencie: PropTypes.func.isRequired,
-  currencies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  editInfo: PropTypes.shape({
+    value: PropTypes.number,
+    description: PropTypes.string,
+    currency: PropTypes.string,
+    method: PropTypes.string,
+    tag: PropTypes.string,
+    exchangeRates: PropTypes.objectOf(PropTypes.object),
+    id: PropTypes.string,
+  }).isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  currencies: state.wallet.currencies,
+  editInfo: state.wallet.editExpense,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getInfo: (currience) => dispatch(fetchCurriencies(currience)),
+  editedExpense: (expense) => dispatch(getEditedExpense(expense)),
   getCurrencie: (currencies) => dispatch(getCurrencies(currencies)),
 });
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPen } from '@fortawesome/free-solid-svg-icons';
-import { deleteExp } from '../actions';
+import { deleteExp, editExpense } from '../actions';
 import '../css/Table.css';
 
 class Table extends React.Component {
@@ -12,7 +12,7 @@ class Table extends React.Component {
   // Source: https://github.com/testing-library/dom-testing-library/issues/583/
 
   render() {
-    const { expenses, deleteButton } = this.props;
+    const { expenses, deleteButton, getEditExp } = this.props;
 
     return (
       <div className="table-div">
@@ -53,6 +53,7 @@ class Table extends React.Component {
                     <FontAwesomeIcon
                       type="button"
                       data-testid="edit-btn"
+                      onClick={ () => getEditExp(gasto) }
                       icon={ faPen }
                     />
                     <FontAwesomeIcon
@@ -75,6 +76,7 @@ class Table extends React.Component {
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteButton: PropTypes.func.isRequired,
+  getEditExp: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -83,6 +85,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   deleteButton: (expense) => dispatch(deleteExp(expense)),
+  getEditExp: (expense) => dispatch(editExpense(expense)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
