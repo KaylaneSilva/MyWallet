@@ -73,6 +73,7 @@ class Login extends React.Component {
             type="button"
             disabled={ !this.disabledButton(email, inputPassword) }
             onClick={ () => {
+              sessionStorage.setItem('email', email);
               getEmail(email);
               history.push('/carteira');
             } }

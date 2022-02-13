@@ -7,6 +7,7 @@
   width: 100vw;
   background-image: url('../images/pexels-john-guccione-wwwadvergroupcom-3531895.jpg');
   background-size: cover;
+  filter: grayscale(100%);
   color: black;
 }
 
@@ -15,7 +16,7 @@
   display: flex;
   height: 15vh;
   justify-content: center;
-  text-shadow: 0.4vh 0.2vw 0 rgba(128, 128, 128, 0.39);
+  text-shadow: 0.4vh 0.2vw 0 rgba(133, 133, 133, 0.884);
   width: 37vw;
 }
 
@@ -32,7 +33,6 @@ h1 {
 
 .section-form {
   align-items: center;
-  background-color: white;
   color: black;
   border: 0.2vw solid rgba(0, 0, 0, 0.062);
   border-radius: 1vw;
@@ -40,6 +40,12 @@ h1 {
   flex-direction: column;
   justify-content: center;
   padding: 10vh 10vw 4vh;
+  background: rgba(53, 53, 53, 0.14);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(2.4px);
+-webkit-backdrop-filter: blur(2.4px);
+border: 1px solid rgba(255, 255, 255, 0.31);
 }
 
 .section-form button {

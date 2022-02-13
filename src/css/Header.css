@@ -1,6 +1,14 @@
+.container-header {
+  background: url('../images/pexels-pixabay-259209.jpg');
+  background-size: cover;
+}
+
 .div-header {
-  background-color: rgba(73, 72, 72, 0.527);
   color: white;
+  background-color: rgba(0, 0, 0, 0.486);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
   display: flex;
   height: 15vh;
   justify-content: space-around;

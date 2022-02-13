@@ -17,3 +17,16 @@
   justify-content: center;
   margin-top: 7%;
 }
+
+@media screen  and (max-width : 550px) {
+
+  .div-putInfo {
+    flex-direction: column;
+    margin: 0 auto 3vh;
+    width: 65%;
+    align-items: center;
+  }  
+  .div-putInfo button {
+    width: 30vw;
+  }
+}

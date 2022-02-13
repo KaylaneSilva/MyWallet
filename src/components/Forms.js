@@ -62,6 +62,19 @@ class Forms extends React.Component {
     } = this.state;
     return (
       <div className="div-putInfo">
+        <div className="input-group mb-3">
+          <span html="description" className="input-group-text">
+            Descrição
+          </span>
+          <input
+            name="description"
+            id="description"
+            type="text"
+            value={description}
+            onChange={this.handleChange}
+            data-testid="description-input"
+          />
+        </div>
         <div className="input-group input-group-sm mb-3">
           <span html="valor" className="input-group-text">
             Valor
@@ -71,49 +84,20 @@ class Forms extends React.Component {
             id="valor"
             type="number"
             data-testid="value-input"
-            value={ value }
-            onChange={ this.handleChange }
+            value={value}
+            onChange={this.handleChange}
           />
         </div>
         <div className="input-group mb-3">
-          <label htmlFor="currency" className="label-coin">
-            <span className="input-group-text">
-              Moeda
-            </span>
-            <select
-              className="form-select"
-              name="currency"
-              id="currency"
-              value={ currency }
-              onChange={ this.handleChange }
-              data-testid="currency-input"
-            >
-              { exchangeRates ? exchangeRates.map((coin, index) => {
-                if (coin.code === 'USDT' || coin.codein === 'BRLT') {
-                  return '';
-                }
-                return (
-                  <option
-                    key={ index }
-                    value={ coin.code }
-                    data-testid={ coin.code }
-                  >
-                    { coin.code }
-                  </option>);
-              }) : ''}
-            </select>
-          </label>
-        </div>
-        <div className="input-group mb-3">
           <span htmlFor="method" className="input-group-text">
-            Método de pagamento
+            Pagamento
           </span>
           <select
             className="form-select"
             name="method"
-            value={ method }
+            value={method}
             id="method"
-            onChange={ this.handleChange }
+            onChange={this.handleChange}
             data-testid="method-input"
           >
             <option> </option>
@@ -129,9 +113,9 @@ class Forms extends React.Component {
           <select
             className="form-select"
             name="tag"
-            value={ tag }
+            value={tag}
             id="tag"
-            onChange={ this.handleChange }
+            onChange={this.handleChange}
             data-testid="tag-input"
           >
             <option> </option>
@@ -143,22 +127,38 @@ class Forms extends React.Component {
           </select>
         </div>
         <div className="input-group mb-3">
-          <span html="description" className="input-group-text">
-            Descrição
-          </span>
-          <input
-            name="description"
-            id="description"
-            type="text"
-            value={ description }
-            onChange={ this.handleChange }
-            data-testid="description-input"
-          />
+          <label htmlFor="currency" className="label-coin">
+            <span className="input-group-text">
+              Moeda
+            </span>
+            <select
+              className="form-select"
+              name="currency"
+              id="currency"
+              value={currency}
+              onChange={this.handleChange}
+              data-testid="currency-input"
+            >
+              {exchangeRates ? exchangeRates.map((coin, index) => {
+                if (coin.code === 'USDT' || coin.codein === 'BRLT') {
+                  return '';
+                }
+                return (
+                  <option
+                    key={index}
+                    value={coin.code}
+                    data-testid={coin.code}
+                  >
+                    {coin.code}
+                  </option>);
+              }) : ''}
+            </select>
+          </label>
         </div>
         <button
           className="btn btn-primary btn-sm"
           type="button"
-          onClick={ () => {
+          onClick={() => {
             getInfo({
               id,
               value,
@@ -168,7 +168,7 @@ class Forms extends React.Component {
               tag,
             });
             this.handleInitialState();
-          } }
+          }}
         >
           Adicionar despesa
         </button>
