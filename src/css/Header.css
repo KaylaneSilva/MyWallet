@@ -1,6 +1,7 @@
 .container-header {
   background: url('../images/pexels-pixabay-259209.jpg');
   background-size: cover;
+  width: 100vw;
 }
 
 .div-header {
@@ -19,7 +20,7 @@
   align-items: center;
   display: flex;
   justify-content: start;
-  margin-left: -4vw;
+  /* margin-left: -1vw; */
   width: 60%;
 }
 
@@ -59,7 +60,37 @@
   margin-left: 2%;
 }
 
-@media screen and ( max-width : 1024px ) {
+@media screen and ( max-width: 620px ) {
+  
+  .div-header {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .div-logo {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: -5vh;
+  }
+
+  .logo img{
+    margin-left: 5%;
+    width: 8%;
+  }
+
+  .section-info {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info {
+    justify-content: center;
+  }
+
+}
+
+@media screen and ( min-width : 800px ) {
 
   .div-header {
     align-items: center;

@@ -18,7 +18,7 @@
   margin-top: 7%;
 }
 
-@media screen  and (max-width : 550px) {
+@media screen  and (max-width : 672px) {
 
   .div-putInfo {
     flex-direction: column;
@@ -29,4 +29,28 @@
   .div-putInfo button {
     width: 30vw;
   }
+}
+
+@media screen  and (max-width : 476px) {
+
+  .div-putInfo {
+    align-items: flex-start;
+  }  
+
+  .div-putInfo input, select {
+    width: 31vw;
+  }
+
+  .div-putInfo button {
+    width: 70vw;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 752px) and (max-width: 1268px) {
+
+  .div-putInfo div {
+    margin: 8vh 2.5vw 0;
+  }
+
 }

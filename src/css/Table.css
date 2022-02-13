@@ -2,3 +2,9 @@
   display: flex;
   justify-content: space-around;
 }
+
+.table-div {
+  width: 95vw;
+  margin: 0 auto;
+  overflow: auto;
+}

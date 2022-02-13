@@ -15,7 +15,7 @@ class Table extends React.Component {
     const { expenses, deleteButton } = this.props;
 
     return (
-      <div className="container-xxl">
+      <div className="table-div">
         <table className="table table-dark table-striped">
           <thead>
             <tr>
