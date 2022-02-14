@@ -12,7 +12,7 @@ class Header extends React.Component {
       ? expenses.reduce((acc, expense) => {
         const cotacao = expense.exchangeRates[expense.currency].ask;
         const valorCotado = (Number(expense.value) * cotacao).toFixed(2);
-        acc += Number(valorCotado);
+        acc += Number(Number(valorCotado).toFixed(2));
         return acc;
       }, 0)
       : '';
