@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eee5b12a.chunk.css",
+    "main.js": "/static/js/main.8c101ec6.chunk.js",
+    "main.js.map": "/static/js/main.8c101ec6.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e8df815d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e8df815d.js.map",
+    "static/css/2.1cace5d8.chunk.css": "/static/css/2.1cace5d8.chunk.css",
+    "static/js/2.c547303b.chunk.js": "/static/js/2.c547303b.chunk.js",
+    "static/js/2.c547303b.chunk.js.map": "/static/js/2.c547303b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b1e523804e5023900c24fc5151250070.js": "/precache-manifest.b1e523804e5023900c24fc5151250070.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.1cace5d8.chunk.css.map": "/static/css/2.1cace5d8.chunk.css.map",
+    "static/css/main.eee5b12a.chunk.css.map": "/static/css/main.eee5b12a.chunk.css.map",
+    "static/js/2.c547303b.chunk.js.LICENSE.txt": "/static/js/2.c547303b.chunk.js.LICENSE.txt",
+    "static/media/Login.css": "/static/media/pexels-john-guccione-wwwadvergroupcom-3531895.ffe434a9.jpg",
+    "static/media/Header.css": "/static/media/pexels-pixabay-259209.e1f33f3a.jpg",
+    "static/media/wallet.png": "/static/media/wallet.fea8b2be.png",
+    "static/media/walletWhite.svg": "/static/media/walletWhite.4d2397ea.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8df815d.js",
+    "static/css/2.1cace5d8.chunk.css",
+    "static/js/2.c547303b.chunk.js",
+    "static/css/main.eee5b12a.chunk.css",
+    "static/js/main.8c101ec6.chunk.js"
+  ]
+}
