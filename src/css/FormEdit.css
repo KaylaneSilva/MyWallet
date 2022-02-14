@@ -1,4 +1,5 @@
 .div-Info {
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
@@ -11,10 +12,14 @@
   width: fit-content;
 }
 
-.label-coin {
+.coin {
   display: flex;
   justify-content: center;
-  margin-top: 7%;
+  margin-top: 1%;
+}
+
+.div-Info button {
+  margin-top: 4vh;
 }
 
 @media screen  and (max-width : 672px) {
@@ -50,7 +55,12 @@
 @media screen and (min-width: 752px) and (max-width: 1268px) {
 
   .div-Info div {
-    margin: 8vh 2.5vw 0;
+    margin: 8vh 2vw 0;
+  }
+
+  .div-Info {
+    background-color: aqua;
+    flex-direction: row;
   }
 
 }

@@ -74,19 +74,19 @@ class Forms extends React.Component {
     } = this.state;
     return (
       <div className="div-Info">
-      <div className="input-group mb-3">
-        <span html="description" className="input-group-text">
-          Descrição
-        </span>
-        <input
-          name="description"
-          id="description"
-          type="text"
-          value={ description }
-          onChange={ this.handleChange }
-          data-testid="description-input"
-        />
-      </div>
+        <div className="input-group mb-3">
+          <span html="description" className="input-group-text">
+            Descrição
+          </span>
+          <input
+            name="description"
+            id="description"
+            type="text"
+            value={ description }
+            onChange={ this.handleChange }
+            data-testid="description-input"
+          />
+        </div>
         <div className="input-group input-group-sm mb-3">
           <span html="valor" className="input-group-text">
             Valor
@@ -139,7 +139,7 @@ class Forms extends React.Component {
           </select>
         </div>
         <div className="input-group mb-3">
-          <label htmlFor="currency" className="label-coin">
+          <label htmlFor="currency" className="coin">
             <span className="input-group-text">
               Moeda
             </span>
