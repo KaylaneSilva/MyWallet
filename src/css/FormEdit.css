@@ -14,8 +14,12 @@
 }
 
 .div-Info div {
-  margin: 8vh 1vw 0;
+  margin: 4vh 1vw 0;
   width: fit-content;
+}
+
+.div-Info div input {
+  width: 90%;
 }
 
 .coin {
