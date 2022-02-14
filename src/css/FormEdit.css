@@ -18,10 +18,6 @@
   width: fit-content;
 }
 
-.div-Info div input {
-  width: 90%;
-}
-
 .coin {
   display: flex;
   justify-content: center;
